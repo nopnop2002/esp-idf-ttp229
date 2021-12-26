@@ -66,3 +66,5 @@ idf.py flash
 __You can change it to any pin using menuconfig.__   
 
 
+# Screen Shot   
+![TTP229-3](https://user-images.githubusercontent.com/6020549/147401025-867f5b12-f2e4-4268-9a5f-30dcd786020b.jpg)
