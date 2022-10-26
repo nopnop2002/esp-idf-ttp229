@@ -16,32 +16,12 @@ In order to use 16key, it is necessary to short TTP229 TP2.
 esp-idf v4.4 or later.   
 This is because this version supports ESP32-C3.   
 
-# Installation for ESP32
+# Installation
 
 ```Shell
 git clone https://github.com/nopnop2002/esp-idf-ttp229
 cd esp-idf-ttp229
-idf.py set-target esp32
-idf.py menuconfig
-idf.py flash
-```
-
-# Installation for ESP32-S2
-
-```Shell
-git clone https://github.com/nopnop2002/esp-idf-ttp229
-cd esp-idf-ttp229
-idf.py set-target esp32s2
-idf.py menuconfig
-idf.py flash
-```
-
-# Installation for ESP32-C3
-
-```Shell
-git clone https://github.com/nopnop2002/esp-idf-ttp229
-cd esp-idf-ttp229
-idf.py set-target esp32c3
+idf.py set-target {esp32/esp32s2/esp32s3/esp32c3}
 idf.py menuconfig
 idf.py flash
 ```
@@ -56,7 +36,7 @@ idf.py flash
 
 # Wirering
 
-|TTP229||ESP32|ESP32-S2|ESP32-C3|
+|TTP229||ESP32|ESP32-S2/S3|ESP32-C3|
 |:-:|:-:|:-:|:-:|:-:|
 |SCL|--|GPIO4|GPIO17|GPIO7|
 |SDA|--|GPIO5|GPIO18|GPIO8|
