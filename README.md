@@ -41,7 +41,7 @@ idf.py flash
 
 # Wirering
 
-|TTP229||ESP32|ESP32-S2/S3|ESP32-C2/C3/C6k|
+|TTP229||ESP32|ESP32-S2/S3|ESP32-C2/C3/C6|
 |:-:|:-:|:-:|:-:|:-:|
 |SCL|--|GPIO4|GPIO17|GPIO0|
 |SDA|--|GPIO5|GPIO18|GPIO1|
