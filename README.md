@@ -3,6 +3,11 @@ TTP229 Capacitive Touch Driver for esp-idf.
 
 I ported from [here](https://github.com/arduino12/ttp229b-arduino).   
 
+# Software requirements
+ESP-IDF V4.4/V5.x.   
+ESP-IDF V5.0 is required when using ESP32-C2.   
+ESP-IDF V5.1 is required when using ESP32-C6.   
+
 # Hardware requirements   
 TTP229 Capacitive Touch switch.
 
@@ -36,10 +41,10 @@ idf.py flash
 
 # Wirering
 
-|TTP229||ESP32|ESP32-S2/S3|ESP32-C3|
+|TTP229||ESP32|ESP32-S2/S3|ESP32-C2/C3/C6k|
 |:-:|:-:|:-:|:-:|:-:|
-|SCL|--|GPIO4|GPIO17|GPIO7|
-|SDA|--|GPIO5|GPIO18|GPIO8|
+|SCL|--|GPIO4|GPIO17|GPIO0|
+|SDA|--|GPIO5|GPIO18|GPIO1|
 |GND|--|GND|GND|GND|
 |VCC|--|3.3V|3.3V|3.3V|
 
