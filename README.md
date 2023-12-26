@@ -16,17 +16,12 @@ TTP229 Capacitive Touch switch.
 In order to use 16key, it is necessary to short TTP229 TP2.
 ![TTP229-2](https://user-images.githubusercontent.com/6020549/147397273-09b752ab-0a95-4e2c-8d36-345d37ac2ddb.JPG)
 
-
-# Software requirements
-esp-idf v4.4 or later.   
-This is because this version supports ESP32-C3.   
-
 # Installation
 
 ```Shell
 git clone https://github.com/nopnop2002/esp-idf-ttp229
 cd esp-idf-ttp229
-idf.py set-target {esp32/esp32s2/esp32s3/esp32c3}
+idf.py set-target {esp32/esp32s2/esp32s3/esp32c2/esp32c3/esp32c6}
 idf.py menuconfig
 idf.py flash
 ```
