@@ -34,7 +34,7 @@ idf.py flash
 ![config-ttp229](https://user-images.githubusercontent.com/6020549/147397307-7217bbbc-a97a-4712-a599-887ac2752938.jpg)
 
 
-# Wirering
+# Wiring
 
 |TTP229||ESP32|ESP32-S2/S3|ESP32-C2/C3/C6|
 |:-:|:-:|:-:|:-:|:-:|
