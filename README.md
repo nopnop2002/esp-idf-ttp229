@@ -14,7 +14,7 @@ TTP229 Capacitive Touch switch.
 
 The TTP229 has 8 keys input mode and 16 keys input mode.   
 These modes are selected via high-value resistor connected to the TP2(KYSEL) pin to VSS, or not.   
-In order to use 16key, it is necessary to short TTP229 TP2.   
+In order to use 16 keys, it is necessary to short TTP229 TP2.   
 ![TTP229-2](https://user-images.githubusercontent.com/6020549/147397273-09b752ab-0a95-4e2c-8d36-345d37ac2ddb.JPG)
 
 # Installation
