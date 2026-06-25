@@ -44,7 +44,7 @@ __You can change it to any pin using menuconfig.__
 __The markings on the board are SCL and SDA, but not the i2c interface.__   
 
 # Screen Shot   
-![TTP229-3](https://user-images.githubusercontent.com/6020549/147401025-867f5b12-f2e4-4268-9a5f-30dcd786020b.jpg)
+<img width="659" height="486" alt="Image" src="https://github.com/user-attachments/assets/a9d66bcb-ee56-4219-a0ca-874913606fd4" />
 
 # How to use this component in your project   
 Create idf_component.yml in the same directory as main.c.   
