@@ -105,7 +105,7 @@ bool TTP229_GetKeys8(TTP229_t * dev, uint8_t * key)
 {
 	if (TTP229_IsTouch(dev)) {
 		TTP229_Keys8(dev);
-		*key = dev->_key16;
+		*key = dev->_keys8;
 		return true;
 	}
 	return false;
