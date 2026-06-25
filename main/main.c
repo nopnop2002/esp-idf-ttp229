@@ -1,10 +1,11 @@
-/* TTP229 Example
+/* 
+	TTP229 Example
 
-	 This example code is in the Public Domain (or CC0 licensed, at your option.)
+	This example code is in the Public Domain (or CC0 licensed, at your option.)
 
-	 Unless required by applicable law or agreed to in writing, this
-	 software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-	 CONDITIONS OF ANY KIND, either express or implied.
+	Unless required by applicable law or agreed to in writing, this
+	software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+	CONDITIONS OF ANY KIND, either express or implied.
 */
 #include <stdio.h>
 #include <string.h>
@@ -24,9 +25,20 @@ void app_main(void)
 	TTP229_t dev;
 	TTP229_Init(&dev, CONFIG_SCL_GPIO, CONFIG_SDA_GPIO);
 
+	uint8_t key = 0;
+	uint8_t prev_key = 0;
 	while(1) {
-		uint8_t key = TTP229_GetKey16(&dev); // Non Blocking
-		if (key != 0) printf("ttp229.GetKey16=%d\n", key);
+		if (TTP229_GetKey16(&dev, &key)) { // Non Blocking
+			if (key != 0) {
+				printf("%d was just touched\n", key);
+				prev_key = key;
+			} else {
+				if (prev_key != 0) {
+					printf("%d was just released\n", prev_key);
+					prev_key = 0;
+				}
+			}
+		}
 		vTaskDelay(1);
-	}
+	} // end while
 }
