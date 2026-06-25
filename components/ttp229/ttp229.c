@@ -86,10 +86,14 @@ uint8_t TTP229_ReadKey8(TTP229_t * dev)
 	TTP229_Key8(dev);
 	return dev->_key8;
 }
-uint8_t TTP229_GetKey8(TTP229_t * dev)
+bool TTP229_GetKey8(TTP229_t * dev, uint8_t * key)
 {
-	if (TTP229_IsTouch(dev)) TTP229_Key8(dev);
-	return dev->_key8;
+	if (TTP229_IsTouch(dev)) {
+		TTP229_Key8(dev);
+		*key = dev->_key8;
+		return true;
+	}
+	return false;
 }
 uint8_t TTP229_ReadKeys8(TTP229_t * dev)
 {
@@ -97,11 +101,14 @@ uint8_t TTP229_ReadKeys8(TTP229_t * dev)
 	TTP229_Keys8(dev);
 	return dev->_keys8;
 }
-uint8_t TTP229_GetKeys8(TTP229_t * dev)
+bool TTP229_GetKeys8(TTP229_t * dev, uint8_t * key)
 {
-	dev->_key8 = 0;
-	if (TTP229_IsTouch(dev)) TTP229_Keys8(dev);
-	return dev->_keys8;
+	if (TTP229_IsTouch(dev)) {
+		TTP229_Keys8(dev);
+		*key = dev->_key16;
+		return true;
+	}
+	return false;
 }
 uint8_t TTP229_ReadKey16(TTP229_t * dev)
 {
@@ -109,11 +116,14 @@ uint8_t TTP229_ReadKey16(TTP229_t * dev)
 	TTP229_Key16(dev);
 	return dev->_key16;
 }
-uint8_t TTP229_GetKey16(TTP229_t * dev)
+bool TTP229_GetKey16(TTP229_t * dev, uint8_t * key)
 {
-	dev->_key16 = 0;
-	if (TTP229_IsTouch(dev)) TTP229_Key16(dev);
-	return dev->_key16;
+	if (TTP229_IsTouch(dev)) {
+		TTP229_Key16(dev);
+		*key = dev->_key16;
+		return true;
+	}
+	return false;
 }
 uint16_t TTP229_ReadKeys16(TTP229_t * dev)
 {
@@ -121,10 +131,14 @@ uint16_t TTP229_ReadKeys16(TTP229_t * dev)
 	TTP229_Keys16(dev);
 	return dev->_keys16;
 }
-uint16_t TTP229_GetKeys16(TTP229_t * dev)
+bool TTP229_GetKeys16(TTP229_t * dev, uint16_t * key)
 {
-	if (TTP229_IsTouch(dev)) TTP229_Keys16(dev);
-	return dev->_keys16;
+	if (TTP229_IsTouch(dev)) {
+		TTP229_Keys16(dev);
+		*key = dev->_keys16;
+		return true;
+	}
+	return false;
 }
 void TTP229_Key8(TTP229_t * dev)
 {
@@ -142,9 +156,11 @@ void TTP229_Keys8(TTP229_t * dev)
 }
 void TTP229_Key16(TTP229_t * dev)
 {
+	//printf("TTP229_Key16\n");
 	dev->_key16 = 0;
 	for (uint8_t i = 0; i < 16; i++)
 		if (TTP229_GetBit(dev)) dev->_key16 = i + 1;
+	//printf("TTP229_Key16 dev->_key16=%d\n", dev->_key16);
 	delay(2); // Tout
 }
 void TTP229_Keys16(TTP229_t * dev)

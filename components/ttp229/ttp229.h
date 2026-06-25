@@ -80,13 +80,13 @@ typedef struct {
 
 void TTP229_Init(TTP229_t * dev, uint8_t sclPin, uint8_t sdoPin);
 uint8_t TTP229_ReadKey8(TTP229_t * dev);
-uint8_t TTP229_GetKey8(TTP229_t * dev);
+bool TTP229_GetKey8(TTP229_t * dev, uint8_t * key);
 uint8_t TTP229_ReadKeys8(TTP229_t * dev);
-uint8_t TTP229_GetKeys8(TTP229_t * dev);
+bool TTP229_GetKeys8(TTP229_t * dev, uint8_t * key);
 uint8_t TTP229_ReadKey16(TTP229_t * dev);
-uint8_t TTP229_GetKey16(TTP229_t * dev);
+bool TTP229_GetKey16(TTP229_t * dev, uint8_t * key);
 uint16_t TTP229_ReadKeys16(TTP229_t * dev);
-uint16_t TTP229_GetKeys16(TTP229_t * dev);
+bool TTP229_GetKeys16(TTP229_t * dev, uint16_t * key);
 void TTP229_WaitForTouch(TTP229_t * dev);
 void TTP229_Key8(TTP229_t * dev);
 void TTP229_Keys8(TTP229_t * dev);
